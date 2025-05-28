@@ -1,0 +1,121 @@
+\-altar_room_chance                      0
+\-back_room_chance                       0
+\-back_room_hidden_door_cache_chance     0
+\-back_room_hidden_door_chance           0
+\-back_room_interconnection_chance       0
+\-background_chance                      0
+\-flagged_liquid_rooms                   0
+\-floor_bottom_spread_chance             0
+\-floor_side_spread_chance               0
+\-ground_background_chance               0
+\-idol_room_chance                       0
+\-machine_bigroom_chance                 0
+\-machine_rewardroom_chance              0
+\-machine_tallroom_chance                0
+\-machine_wideroom_chance                0
+\-max_liquid_particles                   0
+\-mount_chance                           0
+\-size                                   3 2
+
+\?empty                            0
+\?floor_hard                       X
+\?entrance                         !
+\?minewood_floor                   +
+\?platform                         -
+\?lamp_hang                        2
+\?pillar_grow                      8
+\?door2                            @
+\?locked_door                      D
+\?key                              E
+\?caveman_asleep                   F
+\?floor                            G
+\?exit                             "
+\?litwalltorch                     #
+\?surface_floor                    $
+\?diamond                          %
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom0_0   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$++ GGGGGGGG++
+$$$$$$$$$0 GGGGGGGGG0
+$$$$$$$$$0 GGGGGGGGG0
+$$$$$$$$++ GGGGGGGG++
+$$$$$$$$$0 GGGGGGGGGG
+$$$$$$$$$0 GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom0_1   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+++++++++++ ++++++++++
+0000000000 200-2-0020
+!0000000D0 %0000000@0
+++-----+++ ++-000-+++
+0000000000 GG00000GGG
+0000000000 GG00000GGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom0_2   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
++$$$$$$$$$ +GGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
++$$$$$$$$$ +GGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom1_0   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+$$$$$+$$$0 GGGGGGGGGG
+$$$$$++++0 GGGGGGGGGG
+$$$$$+-2-0 GGGGGGGGGG
+$$$$$+0000 GGGGGGGGGG
+$$$$$+0F00 GGGGGGGGGG
+$$$$$+$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom1_1   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+0000E00000 GG00#00GGG
+00--+--000 GG00000GGG
+0000200000 GG-000-GGG
+0000000000 GG00"00GGG
+8000000080 G+++++++GG
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom1_2   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+$$$+$$$$$$ GGGGGGGGGG
+++++$$$$$$ GGGGGGGGGG
+-2-+$$$$$$ GGGGGGGGGG
+000+$$$$$$ GGGGGGGGGG
+0F0+$$$$$$ GGGGGGGGGG
+$$$+$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG
+$$$$$$$$$$ GGGGGGGGGG

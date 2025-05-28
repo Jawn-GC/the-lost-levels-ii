@@ -1,0 +1,171 @@
+\-altar_room_chance                      0
+\-back_room_chance                       0
+\-back_room_hidden_door_cache_chance     0
+\-back_room_hidden_door_chance           0
+\-back_room_interconnection_chance       0
+\-background_chance                      0
+\-flagged_liquid_rooms                   0
+\-floor_bottom_spread_chance             0
+\-floor_side_spread_chance               0
+\-ground_background_chance               0
+\-idol_room_chance                       0
+\-machine_bigroom_chance                 0
+\-machine_rewardroom_chance              0
+\-machine_tallroom_chance                0
+\-machine_wideroom_chance                0
+\-max_liquid_particles                   0
+\-mount_chance                           0
+\-size                                   3 3
+
+\?empty                            0
+\?floor_hard                       X
+\?entrance                         !
+\?minewood_floor                   +
+\?platform                         -
+\?lamp_hang                        2
+\?pillar_grow                      8
+\?door2                            @
+\?locked_door                      D
+\?key                              E
+\?caveman_asleep                   F
+\?floor                            G
+\?exit                             "
+\?litwalltorch                     #
+\?spikes                           $
+\?push_block                       %
+\?bone_block                       &
+\?powder_keg                       '
+\?rock                             (
+\?ladder_plat                      )
+\?ladder                           *
+\?arrow_trap                       ,
+\?rope                             .
+\?eggplant                         1
+\?lava                             3
+\?falling_platform                 4
+\?littorch                         5
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom0_0   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+GGGGGGGGGG GGGGGGGGGG
+GGGGGGGGGG GGGGGGGGGG
+GGGGGGGGGG GGGGGGGGGG
+GGGGGGGGGG GGGGGGGGGG
+GGGGGGG+++ GGGGGGGGGG
+GGGGGGG+00 GGGGGGGGGG
+GGGGGGG+00 GGGGGGGGGG
+GGGGGG++++ GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom0_1   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+GGGGGGGGGG GGGGGGGGGG
+GGGGGGGGGG GGGGGGGGGG
+GGGGGGGGGG GGGGGGGGGG
+G+'+++++++ GGGGGGGGGG
+++%+00000+ GGGGGGGGGG
+0+&+++++++ GGGGGGGGGG
+00'000*000 GGGGGGGGGG
+++&+++)+++ GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom0_2   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+GGGGGGGGGG GGGGGGGGGG
+GGGGGGGGGG GGGGGGGGGG
+GGGGGGGGGG GGGGGGGGGG
+%+GGGGGGGG GGGGGGGGGG
+'+-2-GGGGG GGGGGGGGGG
+&+000GGGGG GGGGGGGGGG
+%0000GGGGG GGGGGGGGGG
+&+++++GGGG GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom1_0   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+GGGGGGGG-- GGGGGGGGGG
+GGGGGGGG00 GGGGGGGGGG
+GGGGGGGG00 GGGGGGGGGG
+GGGG++++00 GGGGGGGGGG
+GGGGG00000 GGGGGGGGGG
+GGGGG0!000 GGGGGGGGGG
+GGGG++++++ GGGGGGGGGG
+GGGGGGG+00 GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom1_1   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+--0-+-*-+- GGGGGGGGGG
+0000+0*0+0 GGGGGGGGGG
+0000-0*0-0 GGGGGGGGGG
+000000*000 GGGGGGGGGG
+000000*000 GGGGGGGGGG
+000000*000 GGGGGGGGGG
++--------- GGGGGGGGGG
+0000000000 GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom1_2   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+\!dual
+00GGGGGGGG GGGGGGGGGG
+00GGGGGGGG GGGGGGGGGG
+0+GGGGGGGG GGGGGGGGGG
+0+GGGGGGGG GGGGGGGGGG
+0+GGGGGGGG GGGGGGGGGG
+0+GGGGGGGG GGGGGGGGGG
+++GGGGGGGG GGGGGGGGGG
+0+GGGGGGGG GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom2_0   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+GGGGGGG+00
+GGGGGGG+-+
+GGGGGGG+02
+GGGGGGG+00
+GGGGGGG+$$
+GGGGGGG+GG
+GGGGGGGGGG
+GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom2_1   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+0000000000
+----------
+0000000000
+0000000000
+$$$$$$$$$$
+GGGGGGGGGG
+GGGGGGGGGG
+GGGGGGGGGG
+
+////////////////////////////////////////////////////////////////////////////////
+\.setroom2_2   // cave
+////////////////////////////////////////////////////////////////////////////////
+
+0+GGGGGGGG
+-+GGGGGGGG
+0+++++GGGG
+0+-000GGGG
+$%00"0GGGG
+G+0GGGGGGG
+GGGGGGGGGG
+GGGGGGGGGG
