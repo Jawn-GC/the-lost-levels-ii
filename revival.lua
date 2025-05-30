@@ -1,14 +1,14 @@
 local checkpoints = require("Checkpoints/checkpoints")
 
 local level_var = {
-    identifier = "slider",
-    title = "Slider",
+    identifier = "revival",
+    title = "Revival",
     theme = THEME.TEMPLE,
     world = 5,
 	level = 1,
-	width = 8,
-    height = 4,
-    file_name = "slider.lvl",
+	width = 3,
+    height = 3,
+    file_name = "revival.lvl",
 }
 
 local level_state = {
@@ -59,6 +59,10 @@ level_var.load_level = function()
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
 		entity.flags = set_flag(entity.flags, 6)
     end, SPAWN_TYPE.ANY, 0, ENT_TYPE.FLOOR_QUICKSAND)
+
+	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function(entity)
+		entity:tame(true)
+	end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MOUNT_ROCKDOG)
 
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
 		entity:destroy()

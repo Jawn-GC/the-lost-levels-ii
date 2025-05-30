@@ -230,7 +230,7 @@ gggggggg%?
 gggggggg%0
 gggggggg0>
 gggggggg0g
-gggg""000"
+gggg""""0"
 gggg000000
 gggg000000
 
@@ -251,9 +251,9 @@ ggg000gggg
 \.setroom6_0   // temple
 ////////////////////////////////////////////////////////////////////////////////
 
-gggg00>>00
-gggg00gg00
-ggg,00gg0>
+gggg000000
+gggg000000
+ggg,00>>0>
 gggg00gg%g
 gggg00gd0d
 gggg88gF0J
@@ -296,8 +296,8 @@ gggggggggg
 gggggggggg
 gggggggggg
 gggggggggg
-gggggggggg
-gggggggggg
+gagggggggg
+g%gggggggg
 
 ////////////////////////////////////////////////////////////////////////////////
 \.setroom8_0   // temple
@@ -307,8 +307,8 @@ gggggggg00
 gggggggg00
 gggggggg00
 gggggggg00
-gggggggg00
 gggggggg0>
+gggggggg0g
 gggggggF0J
 gggggggd0d
 
@@ -317,11 +317,11 @@ gggggggd0d
 ////////////////////////////////////////////////////////////////////////////////
 
 00gggggggg
-a0gggggggg
->0gggggggg
-"0gggggggg
+00gggggggg
+00gggggggg
 00gggggggg
 >0gggggggg
+g0gggggggg
 g0gggggggg
 g0gggggggg
 
@@ -333,7 +333,7 @@ gggggggg0g
 gggggggg0"
 gggggggg00
 gggggggg00
-gggg>>>>0>
+gggggggg0>
 gggg00000g
 gggg00000g
 gggg000>0g

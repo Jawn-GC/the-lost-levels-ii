@@ -28,26 +28,30 @@ local p2 = require("fuse")
 local p3 = require("breakthrough")
 local p4 = require("hop")
 local p5 = require("one_bird_two_stones")
-local p6 = require("transform")
-local p7 = require("forcefields")
-local p8 = require("mineshaft")
-local p9 = require("high_roller")
-local p10 = require("slider")
-local p11 = require("thanksgiving")
-local p12 = require("ignition")
+local p6 = require("revival")
+local p7 = require("transform")
+local p8 = require("forcefields")
+local p9 = require("mineshaft")
+local p10 = require("high_roller")
+local p11 = require("slider")
+local p12 = require("thanksgiving")
+local p13 = require("ignition")
 
 --Kaizo Levels
-local k1 = require("floor_is_lava")
-local k2 = require("descent")
-local k3 = require("quilliam")
-local k4 = require("overgrown")
-local k5 = require("vibe_check")
-local k6 = require("downfall")
+local k1 = require("spikeball")
+local k2 = require("missiles")
+local k3 = require("floor_is_lava")
+local k4 = require("descent")
+local k5 = require("quilliam")
+local k6 = require("overgrown")
+local k7 = require("tomb_raider")
+local k8 = require("vibe_check")
+local k9 = require("downfall")
 
 local ending = require("ending")
 
 --Set level order
-levels = {p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, k1, k2, k3, k4, k5, k6, ending}
+levels = {p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, k1, k2, k3, k4, k5, k6, k7, k8, k9, ending}
 level_sequence.set_levels(levels)
 
 --Do not spawn Ghost
@@ -397,7 +401,7 @@ set_callback(function()
 		health = health + players[i].health
 	end
 
-	if health == 0 then
+	if health == 0 and level_sequence.get_run_state().current_level.identifier ~= "revival" then
 		state.quest_flags = set_flag(state.quest_flags, 1)
 		warp(state.world_start, state.level_start, state.theme_start)
 	end

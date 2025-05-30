@@ -1,14 +1,14 @@
 local checkpoints = require("Checkpoints/checkpoints")
 
 local level_var = {
-    identifier = "slider",
-    title = "Slider",
+    identifier = "tomb_raider",
+    title = "Tomb Raider [Redux]",
     theme = THEME.TEMPLE,
     world = 5,
 	level = 1,
 	width = 8,
     height = 4,
-    file_name = "slider.lvl",
+    file_name = "tomb_raider.lvl",
 }
 
 local level_state = {
@@ -59,7 +59,11 @@ level_var.load_level = function()
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
 		entity.flags = set_flag(entity.flags, 6)
     end, SPAWN_TYPE.ANY, 0, ENT_TYPE.FLOOR_QUICKSAND)
-
+	
+	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
+		entity:give_powerup(ENT_TYPE.ITEM_POWERUP_SPIKE_SHOES)
+    end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_SNAKE)
+	
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
 		entity:destroy()
     end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_CRITTERLOCUST)
