@@ -5,7 +5,7 @@ meta = {
     author = 'JawnGC',
 }
 
-register_option_int("level_selected", "Level number for shortcut door (1 to 28)", 1, 1, 28)
+register_option_int("level_selected", "Level number for shortcut door (1 to 25)", 1, 1, 25)
 register_option_bool("checkpoints_disabled", "Disable checkpoints", false)
 
 local level_sequence = require("LevelSequence/level_sequence")
@@ -46,12 +46,13 @@ local k5 = require("quilliam")
 local k6 = require("overgrown")
 local k7 = require("tomb_raider")
 local k8 = require("vibe_check")
-local k9 = require("downfall")
-
-local ending = require("ending")
+local k9 = require("power_core")
+local k10 = require("tubular")
+local k11 = require("downfall")
+local k12 = require("master_of_none")
 
 --Set level order
-levels = {p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, k1, k2, k3, k4, k5, k6, k7, k8, k9, ending}
+levels = {p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, k1, k2, k3, k4, k5, k6, k7, k8, k9, k10, k11, k12}
 level_sequence.set_levels(levels)
 
 --Do not spawn Ghost
@@ -103,8 +104,8 @@ local function shortcut_callback()
 	return set_pre_tile_code_callback(function(x, y, layer)
 		if options.level_selected < 1 then
 			options.level_selected = 1
-		elseif options.level_selected > #levels - 1 then
-			options.level_selected = #levels - 1
+		elseif options.level_selected > #levels then
+			options.level_selected = #levels
 		end
 		
 		level_sequence.spawn_shortcut(x, y, layer, levels[options.level_selected], SIGN_TYPE.RIGHT)

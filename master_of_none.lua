@@ -1,14 +1,14 @@
 local checkpoints = require("Checkpoints/checkpoints")
 
 local level_var = {
-    identifier = "missiles",
-    title = "Missiles",
-    theme = THEME.TIDE_POOL,
+    identifier = "master_of_none",
+    title = "Master of None [Redux]",
+    theme = THEME.SUNKEN_CITY,
     world = 2,
-	level = 2,
-	width = 5,
+	level = 12,
+	width = 8,
     height = 4,
-    file_name = "missiles.lvl",
+    file_name = "master_of_none.lvl",
 }
 
 local level_state = {
@@ -19,6 +19,11 @@ local level_state = {
 level_var.load_level = function()
     if level_state.loaded then return end
     level_state.loaded = true
+	
+	replace_drop(DROP.MOLE_MATTOCK, ENT_TYPE.ITEM_BLOOD)
+	replace_drop(DROP.EGGSAC_GRUB_1, ENT_TYPE.ITEM_BLOOD)
+	replace_drop(DROP.EGGSAC_GRUB_2, ENT_TYPE.ITEM_BLOOD)
+	replace_drop(DROP.EGGSAC_GRUB_3, ENT_TYPE.ITEM_BLOOD)
 	
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function(entity, spawn_flags)
 		entity:destroy()
@@ -42,11 +47,19 @@ level_var.load_level = function()
 
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
 		entity.flags = set_flag(entity.flags, 6)
-    end, SPAWN_TYPE.ANY, 0, ENT_TYPE.FLOORSTYLED_PAGODA)
+    end, SPAWN_TYPE.ANY, 0, ENT_TYPE.FLOORSTYLED_SUNKEN)
 
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
 		entity.flags = set_flag(entity.flags, 6)
     end, SPAWN_TYPE.ANY, 0, ENT_TYPE.FLOOR_THORN_VINE)
+
+	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
+		entity:give_powerup(ENT_TYPE.ITEM_POWERUP_SPIKE_SHOES)
+    end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_SNAKE)
+
+	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
+		entity:give_powerup(ENT_TYPE.ITEM_POWERUP_SPIKE_SHOES)
+    end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_MOLE)
 
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
 		entity.flags = set_flag(entity.flags, 6)
@@ -55,30 +68,29 @@ level_var.load_level = function()
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
 		entity.flags = set_flag(entity.flags, 6)
     end, SPAWN_TYPE.ANY, 0, ENT_TYPE.FLOOR_CONVEYORBELT_RIGHT)
+	
+	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
+		entity.flags = set_flag(entity.flags, 6)
+    end, SPAWN_TYPE.ANY, 0, ENT_TYPE.FLOOR_FORCEFIELD)
 
 	level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function (entity)
-        -- Remove Hermitcrabs
-        local x, y, layer = get_position(entity.uid)
-        local floor = get_entities_at(0, MASK.ANY, x, y, layer, 1)
-        if #floor > 0 then
-            entity.flags = set_flag(entity.flags, ENT_FLAG.INVISIBLE)
-            entity:destroy()
-        end
-    end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_HERMITCRAB)
+		entity.flags = set_flag(entity.flags, 6)
+    end, SPAWN_TYPE.ANY, 0, ENT_TYPE.FLOOR_FORCEFIELD_TOP)
 
-	--Tiamat Bubbles
-	define_tile_code("bubble")
-	local bubble_xy = {}
+	--Indicator for rope
+	local rope_xy = {}
+	define_tile_code("unrolled_rope")
 	level_state.callbacks[#level_state.callbacks+1] = set_pre_tile_code_callback(function(x, y, layer)
-		bubble_xy[#bubble_xy + 1] = {x,y}
-		return true
-	end, "bubble")
-	
+		rope_xy[#rope_xy + 1] = {x,y}
+	end, "unrolled_rope")
+
 	local frames = 0
 	level_state.callbacks[#level_state.callbacks+1] = set_callback(function ()
-		if frames % 150 == 0 then
-			for i = 1,#bubble_xy do
-				spawn(ENT_TYPE.ACTIVEFLOOR_BUBBLE_PLATFORM, bubble_xy[i][1], bubble_xy[i][2], 0, 0, 0)
+		if frames == 0 then
+			for i = 1,#rope_xy do
+				local rope_uid = spawn_unrolled_player_rope(rope_xy[i][1], rope_xy[i][2], 0, players[1]:get_texture(), 0)
+				get_entity(rope_uid).color:set_rgba(100, 100, 100, 235)
+				get_entity(rope_uid).flags = clr_flag(get_entity(rope_uid).flags, 9)
 			end
 		end
         frames = frames + 1
@@ -96,7 +108,11 @@ level_var.unload_level = function()
     if not level_state.loaded then return end
     
 	checkpoints.deactivate()
-
+	replace_drop(DROP.EGGSAC_GRUB_1, ENT_TYPE.MONS_GRUB)
+	replace_drop(DROP.EGGSAC_GRUB_2, ENT_TYPE.MONS_GRUB)
+	replace_drop(DROP.EGGSAC_GRUB_3, ENT_TYPE.MONS_GRUB)
+	replace_drop(DROP.MOLE_MATTOCK, ENT_TYPE.ITEM_MATTOCK)
+	
     local callbacks_to_clear = level_state.callbacks
     level_state.loaded = false
     level_state.callbacks = {}
